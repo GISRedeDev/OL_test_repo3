@@ -4,7 +4,8 @@ from datetime import datetime
 def main():
     # Use absolute path to the mounted fileshare
     base_output_path = Path("/mnt/output")
-    
+    base_reference_path = Path("/mnt/reference")
+    assert base_reference_path.exists()    
     # Get current timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
@@ -23,6 +24,8 @@ def main():
         with open(output_file, 'w') as f:
             f.write("Hello, World from vm3\n")
             f.write("Generated at: {}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+            for folder in base_reference_path.iterdir():
+                f.write(f"REF folder {folder.name} is here")
 
 if __name__ == "__main__":
     main()
