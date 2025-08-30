@@ -23,8 +23,9 @@ def main():
         with open(output_file, 'w') as f:
             f.write("Hello, World from vm3\n")
             f.write("Generated at: {}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-            for folder in base_reference_path.iterdir():
-                f.write(f"REF folder {folder.name} is here")
+            if base_reference_path.exists():
+                for folder in base_reference_path.iterdir():
+                    f.write(f"REF folder {folder.name} is here")
             f.write("Is there anything in reference?")
 
 if __name__ == "__main__":
