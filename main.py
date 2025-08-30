@@ -4,8 +4,7 @@ from datetime import datetime
 def main():
     # Use absolute path to the mounted fileshare
     base_output_path = Path("/mnt/output")
-    base_reference_path = Path("/mnt/reference")
-    assert base_reference_path.exists()    
+    base_reference_path = Path("/mnt/reference")  
     # Get current timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
