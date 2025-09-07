@@ -12,7 +12,7 @@ def main():
     output_bronze = base_output_path / f"bronze/vm3/vm3_{timestamp}.txt"
     output_silver = base_output_path / f"silver/vm3/vm3_{timestamp}.txt"
     output_gold = base_output_path / f"gold/vm3/vm3_{timestamp}.txt"
-    staging_data = base_output_path / f"staging_data/vm3/vm3_{timestamp}.txt"
+    staging_data = base_output_path / f"staging-data/vm3/vm3_{timestamp}.txt"
     
     output_files = [output_bronze, output_silver, output_gold, staging_data]
     
