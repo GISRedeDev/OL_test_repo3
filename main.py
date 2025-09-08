@@ -1,10 +1,12 @@
 from pathlib import Path
 from datetime import datetime
+import os
 
 def main():
     # Use absolute path to the mounted fileshare
-    base_output_path = Path("/mnt")
-    base_reference_path = Path("/mnt/reference")  
+    batch_mounts_dir = os.environ.get('AZ_BATCH_NODE_MOUNTS_DIR')
+    base_output_path = Path(batch_mounts_dir)
+    base_reference_path = base_output_path.joinpath("reference")  
     # Get current timestamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
