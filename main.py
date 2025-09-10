@@ -4,7 +4,8 @@ import os
 
 def main():
     # Use absolute path to the mounted fileshare
-    batch_mounts_dir = os.environ.get('AZ_BATCH_NODE_MOUNTS_DIR')
+    #batch_mounts_dir = os.environ.get('AZ_BATCH_NODE_MOUNTS_DIR')
+    batch_mounts_dir = "/mnt"
     base_output_path = Path(batch_mounts_dir)
     base_reference_path = base_output_path.joinpath("reference")  
     # Get current timestamp
