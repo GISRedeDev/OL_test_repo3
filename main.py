@@ -1,6 +1,8 @@
 from pathlib import Path
 from datetime import datetime
 import os
+import geopandas as gpd
+import rasterio
 
 def main():
     # Use absolute path to the mounted fileshare
@@ -31,6 +33,14 @@ def main():
                 for folder in base_reference_path.iterdir():
                     f.write(f"REF folder {folder.name} is here")
             f.write("Is there anything in reference?")
+            try:
+                f.write("Geopandas version: {}\n".format(gpd.__version__))
+            except Exception as e:
+                f.write("Error getting Geopandas version: {}\n".format(e))
+            try:
+                f.write("Rasterio version: {}\n".format(rasterio.__version__))
+            except Exception as e:
+                f.write("Error getting Rasterio version: {}\n".format(e))
 
 if __name__ == "__main__":
     main()
